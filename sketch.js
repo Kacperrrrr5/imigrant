@@ -1,11 +1,8 @@
-let streetNames = ["1 Maja", "3 Maja", "11 Listopada", "Adama Mickiewicza", "Jana Pawła II", "Aleja Niepodległości", "Andersa", "Bolesława Prusa"];
+let streetNames = ["1 Maja", "3 Maja", "11 Listopada", "Adama Mickiewicza", "Jana Pawła II", "Aleja Niepodległości", "Andersa", "Bolesława Prusa", "Bolesława Śmiałego", "Czarnieckiego", "Długa", "Dworcowa", "Franciszkańska", "Generała Władysława Sikorskiego", "Gimnazjalna", "Grodzka", "Henryka Sienkiewicza", "Hrubieszowska", "Ignacego Paderewskiego", "Jagiellońska", "Jana III Sobieskiego", "Józefa Piłsudskiego", "Juliusza Słowackiego", "Kalinowa", "Kamienna", "Karola Wojtyły", "Kasprowicza", "Kopernika", "Kościuszki", "Ks. Józefa Tischnera", "Kwiatowa", "Leśna", "Lwowska", "Matejki", "Mickiewicza", "Mikołaja Kopernika", "Moniuszki", "Narutowicza", "Nowa", "Okrzei", "Orzeszkowej", "Ostatnia", "Ostrołęcka", "Parkowa", "Partyzantów", "Podchorążych","Piaskowa", "Piotra Skargi", "Podgórna", "Polna", "Pomorska", "Powstańców Śląskich", "Prusa", "Pułaskiego", "Ratuszowa", "Reja", "Armii Krajowej", "Białostocka", "Chopina", "Cieszyńska", "Dąbrowskiego", "Gdańska", "Grunwaldzka", "Katowicka", "Kościelna", "Krakowska", "Królewska", "Legionów", "Lubelska", "Łokietka", "Marszałkowska", "Mazowiecka", "Nowowiejska", "Ogrodowa", "Powstańców Warszawskich", "Reymonta", "Rzeszowska", "Sandomierska", "Sienkiewicza", "Słowackiego", "Sobieskiego", "Szkolna", "Szczecińska", "Traugutta", "Warszawska", "Wrocławska", "Wyszyńskiego", "Zakopiańska", "Śląska", "Świętokrzyska", "Żeromskiego", "Żwirki i Wigury", "Żytnia", "Bolesława Chrobrego", "Częstochowska", "Daszyńskiego", "Fabryczna", "Górna", "Harcerska", "Iwaszkiewicza", "Jabłonowskich", "Kamienny Potok", "Kasprzaka", "Księcia Witolda", "Kwiatowa", "Lipowa", "Mazurska", "Mikołaja Reja", "Nadrzeczna", "Opolska", "Piastowska", "Pocztowa", "Północna", "Promienna", "Racławicka", "Różyckiego", "Rynek", "Słoneczna", "Stawowa", "Strzelecka", "Szeroka", "Świętojańska", "Toruńska", "Tuwima", "Wesoła", "Wiejska", "Wodna", "Wojska Polskiego", "Wolności", "Wróblewskiego", "Wschodnia", "Zielona"];
 let currentAddress = "";
 let mapImage;
 let headImage;
 let mapMask;
-let buttonNext, buttonBack;
-let buttonWidth = 100;
-let buttonHeight = 50;
 
 function preload() {
   // Load the map image
@@ -21,14 +18,10 @@ function setup() {
   // Create a graphics buffer for the mask
   mapMask = createGraphics(mapImage.width, mapImage.height);
   mapMask.image(mapImage, 0, 0);
-
-  // Initialize buttons
-  buttonNext = new Button(width - buttonWidth - 20, height - buttonHeight - 20, buttonWidth, buttonHeight, "Dalej");
-  buttonBack = new Button(width - buttonWidth * 2 - 40, height - buttonHeight - 20, buttonWidth, buttonHeight, "Cofnij");
 }
 
 function draw() {
-  background(220);
+  background(255);
   image(headImage, 0, 0, 1920, 220);
   
   // Calculate center positions
@@ -51,10 +44,6 @@ function draw() {
     textStyle(NORMAL);
     text(currentAddress, width / 2 - textWidth(currentAddress) / 2, 825);
   }
-
-  // Draw buttons
-  buttonNext.draw();
-  buttonBack.draw();
 }
 
 function mousePressed() {
@@ -81,40 +70,5 @@ function mousePressed() {
 
       currentAddress = street + " " + number + ", " + postalCode;
     }
-  }
-
-  // Check if buttons are pressed
-  if (buttonNext.isMouseOver()) {
-    window.open('https://www.wp.pl', '_self');
-  }
-
-  if (buttonBack.isMouseOver()) {
-    console.log("Cofnij button pressed");
-    // Add logic for "Cofnij" button press
-  }
-}
-
-// Button class
-class Button {
-  constructor(x, y, width, height, label) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.label = label;
-    this.hovered = false;
-  }
-
-  draw() {
-    this.hovered = this.isMouseOver();
-    fill(this.hovered ? 150 : 255);
-    rect(this.x, this.y, this.width, this.height, 10);
-    fill(0);
-    textAlign(CENTER, CENTER);
-    text(this.label, this.x + this.width / 2, this.y + this.height / 2);
-  }
-
-  isMouseOver() {
-    return mouseX > this.x && mouseX < this.x + this.width && mouseY > this.y && mouseY < this.y + this.height;
   }
 }
