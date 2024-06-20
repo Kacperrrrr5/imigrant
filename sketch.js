@@ -20,12 +20,12 @@ function preload() {
 
 function setup() {
   createCanvas(1920, 1080);
-  textSize(20);
+  textSize(22);
   
   //Nawigacja
-  buttonY = height / 2 - buttonHeight / 2;
-  button1X = width - 210;
-  button2X = width - 110;
+  buttonY = 800;
+  button1X = width - 260;
+  button2X = width - 160;
 
   //Bufor grafiki maski
   mapMask = createGraphics(mapImage.width, mapImage.height);
@@ -50,16 +50,22 @@ function draw() {
   
   fill(0);
   textStyle(BOLDITALIC);
-  text("Wskaż na mapie dokładny adres zameldowania", 700, 300);
+  textSize(21);
+  text("Wskaż na mapie dokładny adres zameldowania", width/2, 300);
+  textSize(20);
+  
+  //ramka adresu
   noFill();
+  stroke(0);
   strokeWeight(2);
   rect(715, 800, 500, 40);
 
   // Display the current address if it exists
   if (currentAddress !== "") {
     fill(0);
+    noStroke();
     textStyle(NORMAL);
-    text(currentAddress, width / 2 - textWidth(currentAddress) / 2, 825);
+    text(currentAddress, width / 2, 821);
   }
 }
 
@@ -76,6 +82,7 @@ function drawButton(x, y, w, h, label, baseColor) {
   rect(x, y, w, h);
   fill(255);
   textStyle(NORMAL);
+  textSize(20);
   textAlign(CENTER, CENTER);
   text(label, x + w / 2, y + h / 2);
 }
