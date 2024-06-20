@@ -99,7 +99,7 @@ function mousePressed() {
   
   //Nawigacja
   if (isMouseOver(button2X, buttonY, buttonWidth, buttonHeight)) {
-    window.open('https://www.wp.pl', '_self');
+    window.open('https://jonatannnnn.github.io/zdjeciee/', '_self');
   }
   
   // Check if the mouse is within the map bounds
