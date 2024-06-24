@@ -23,9 +23,9 @@ function setup() {
   textSize(22);
   
   //Nawigacja
-  buttonY = 800;
-  button1X = width - 260;
-  button2X = width - 160;
+    buttonY = 1010;
+  button1X = width - 210;
+  button2X = width - 110;
 
   //Bufor grafiki maski
   mapMask = createGraphics(mapImage.width, mapImage.height);
@@ -50,7 +50,8 @@ function draw() {
   
   fill(0);
   textStyle(BOLDITALIC);
-  textSize(21);
+  textSize(30);
+  textAlign(CENTER, CENTER);
   text("Wskaż na mapie dokładny adres zameldowania", width/2, 300);
   textSize(20);
   
