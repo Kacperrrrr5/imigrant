@@ -99,7 +99,7 @@ function mousePressed() {
   
   //Nawigacja
   if (isMouseOver(button2X, buttonY, buttonWidth, buttonHeight)) {
-    window.open('https://jonatannnnn.github.io/zdjeciee/', '_self');
+    window.open('https://kacperrrrr5.github.io/imigrant-zdjecie/', '_self');
   }
   
   // Check if the mouse is within the map bounds
