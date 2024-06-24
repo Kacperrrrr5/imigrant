@@ -23,7 +23,7 @@ function setup() {
   textSize(22);
   
   //Nawigacja
-    buttonY = 1010;
+  buttonY = 1010;
   button1X = width - 210;
   button2X = width - 110;
 
@@ -50,14 +50,13 @@ function draw() {
   
   fill(0);
   textStyle(BOLDITALIC);
-  textSize(30);
-  textAlign(CENTER, CENTER);
+  textSize(27);
   text("Wskaż na mapie dokładny adres zameldowania", width/2, 300);
   textSize(20);
   
   //ramka adresu
   noFill();
-  stroke(0);
+  stroke(200);
   strokeWeight(2);
   rect(715, 800, 500, 40);
 
@@ -100,7 +99,7 @@ function mousePressed() {
   
   //Nawigacja
   if (isMouseOver(button2X, buttonY, buttonWidth, buttonHeight)) {
-    window.open('https://kacperrrrr5.github.io/imigrant-zdjecie/', '_self');
+    window.open('https://www.wp.pl', '_self');
   }
   
   // Check if the mouse is within the map bounds
